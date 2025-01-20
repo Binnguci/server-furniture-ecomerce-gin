@@ -1,0 +1,35 @@
+{"level":"INFO","timestamp":"2025-01-19T02:10:27.668+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-01-19T09:24:26.242+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"ERROR","timestamp":"2025-01-19T09:24:26.242+0700","caller":"initialize/mysql.go:14","msg":"gorm.Open failed","error":"Error 1045 (28000): Access denied for user ''@'localhost' (using password: YES)","stacktrace":"_server-furniture-ecommerce-gin/internal/initialize.checkErrorPanic\n\t/home/binnguci/Source/ server-furniture-ecommerce-gin/internal/initialize/mysql.go:14\n_server-furniture-ecommerce-gin/internal/initialize.InitMySQL\n\t/home/binnguci/Source/ server-furniture-ecommerce-gin/internal/initialize/mysql.go:25\n_server-furniture-ecommerce-gin/internal/initialize.Run\n\t/home/binnguci/Source/ server-furniture-ecommerce-gin/internal/initialize/run.go:9\nmain.main\n\t/home/binnguci/Source/ server-furniture-ecommerce-gin/cmd/server/main.go:6\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:272"}
+{"level":"INFO","timestamp":"2025-01-19T09:25:24.944+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-01-19T09:25:24.945+0700","caller":"initialize/mysql.go:26","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-01-20T20:42:06.401+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-01-20T20:42:06.402+0700","caller":"initialize/mysql.go:26","msg":"mysql connect success"}
+{"level":"ERROR","timestamp":"2025-01-20T20:42:06.469+0700","caller":"initialize/redis.go:24","msg":"Redis initialize error: ","error":"dial tcp 127.0.0.1:6381: connect: connection refused","stacktrace":"_server-furniture-ecommerce-gin/internal/initialize.InitRedis\n\t/home/binnguci/Source/ server-furniture-ecommerce-gin/internal/initialize/redis.go:24\n_server-furniture-ecommerce-gin/internal/initialize.Run\n\t/home/binnguci/Source/ server-furniture-ecommerce-gin/internal/initialize/run.go:10\nmain.main\n\t/home/binnguci/Source/ server-furniture-ecommerce-gin/cmd/server/main.go:6\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:272"}
+{"level":"INFO","timestamp":"2025-01-20T20:51:46.812+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-01-20T20:51:46.813+0700","caller":"initialize/mysql.go:26","msg":"mysql connect success"}
+{"level":"ERROR","timestamp":"2025-01-20T20:51:46.880+0700","caller":"initialize/redis.go:24","msg":"Redis initialize error: ","error":"dial tcp 127.0.0.1:6379: connect: connection refused","stacktrace":"_server-furniture-ecommerce-gin/internal/initialize.InitRedis\n\t/home/binnguci/Source/ server-furniture-ecommerce-gin/internal/initialize/redis.go:24\n_server-furniture-ecommerce-gin/internal/initialize.Run\n\t/home/binnguci/Source/ server-furniture-ecommerce-gin/internal/initialize/run.go:10\nmain.main\n\t/home/binnguci/Source/ server-furniture-ecommerce-gin/cmd/server/main.go:6\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:272"}
+{"level":"INFO","timestamp":"2025-01-20T21:29:06.278+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-01-20T21:29:06.278+0700","caller":"initialize/mysql.go:26","msg":"mysql connect success"}
+{"level":"ERROR","timestamp":"2025-01-20T21:29:06.345+0700","caller":"initialize/redis.go:24","msg":"Redis initialize error: ","error":"dial tcp 127.0.0.1:6381: connect: connection refused","stacktrace":"_server-furniture-ecommerce-gin/internal/initialize.InitRedis\n\t/home/binnguci/Source/ server-furniture-ecommerce-gin/internal/initialize/redis.go:24\n_server-furniture-ecommerce-gin/internal/initialize.Run\n\t/home/binnguci/Source/ server-furniture-ecommerce-gin/internal/initialize/run.go:10\nmain.main\n\t/home/binnguci/Source/ server-furniture-ecommerce-gin/cmd/server/main.go:6\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:272"}
+{"level":"INFO","timestamp":"2025-01-20T21:53:23.285+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-01-20T21:53:23.286+0700","caller":"initialize/mysql.go:26","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-01-20T22:06:43.293+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-01-20T22:06:43.294+0700","caller":"initialize/mysql.go:26","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-01-20T22:13:06.271+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-01-20T22:13:06.271+0700","caller":"initialize/mysql.go:26","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-01-20T22:38:01.971+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-01-20T22:38:01.972+0700","caller":"initialize/mysql.go:26","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-01-20T22:38:01.973+0700","caller":"initialize/redis.go:41","msg":"Value score is::","score":"100"}
+{"level":"INFO","timestamp":"2025-01-20T23:38:50.321+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-01-20T23:38:50.322+0700","caller":"initialize/mysql.go:26","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-01-20T23:38:50.323+0700","caller":"initialize/redis.go:41","msg":"Value score is::","score":"100"}
+{"level":"INFO","timestamp":"2025-01-20T23:39:09.566+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-01-20T23:39:09.567+0700","caller":"initialize/mysql.go:26","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-01-20T23:39:09.567+0700","caller":"initialize/redis.go:41","msg":"Value score is::","score":"100"}
+{"level":"INFO","timestamp":"2025-01-20T23:39:26.419+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-01-20T23:39:26.420+0700","caller":"initialize/mysql.go:26","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-01-20T23:39:26.420+0700","caller":"initialize/redis.go:41","msg":"Value score is::","score":"100"}
+{"level":"INFO","timestamp":"2025-01-20T23:39:34.446+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-01-20T23:39:34.446+0700","caller":"initialize/mysql.go:26","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-01-20T23:39:34.447+0700","caller":"initialize/redis.go:41","msg":"Value score is::","score":"100"}

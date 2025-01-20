@@ -1,0 +1,25 @@
+server:
+  port: 8082
+  mode: "dev"
+mysql:
+  host:
+  port:
+  username:
+  password:
+  database:
+  maxIdleConns: 10
+  maxOpenConns: 100
+  connMaxLifetime: 3600
+log:
+  log_level: debug
+  log_path: "./storage/logs/dev.log"
+  log_max_size: 50
+  log_max_backups: 3
+  log_max_age: 28
+  log_compress: true
+redis:
+  host:
+  port:
+  password:
+  database: 0
+  pool_size: 10
