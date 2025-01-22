@@ -33,3 +33,6 @@
 {"level":"INFO","timestamp":"2025-01-20T23:39:34.446+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
 {"level":"INFO","timestamp":"2025-01-20T23:39:34.446+0700","caller":"initialize/mysql.go:26","msg":"mysql connect success"}
 {"level":"INFO","timestamp":"2025-01-20T23:39:34.447+0700","caller":"initialize/redis.go:41","msg":"Value score is::","score":"100"}
+{"level":"INFO","timestamp":"2025-01-21T01:19:10.825+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-01-21T01:19:10.826+0700","caller":"initialize/mysql.go:27","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-01-21T01:19:11.034+0700","caller":"initialize/redis.go:41","msg":"Value score is::","score":"100"}

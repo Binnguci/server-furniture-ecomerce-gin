@@ -1,10 +1,10 @@
 package global
 
 import (
-	"_server-furniture-ecommerce-gin/pkg/logger"
-	"_server-furniture-ecommerce-gin/pkg/setting"
 	"github.com/redis/go-redis/v9"
 	"gorm.io/gorm"
+	"server-book-ecommerce-gin/pkg/logger"
+	"server-book-ecommerce-gin/pkg/setting"
 )
 
 var (

@@ -1,9 +1,9 @@
 package initialize
 
 import (
-	"_server-furniture-ecommerce-gin/global"
 	"fmt"
 	"github.com/spf13/viper"
+	"server-book-ecommerce-gin/global"
 )
 
 func LoadConfig() {

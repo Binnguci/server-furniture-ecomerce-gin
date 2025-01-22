@@ -1,6 +1,6 @@
 package initialize
 
-import "_server-furniture-ecommerce-gin/global"
+import "server-book-ecommerce-gin/global"
 
 func Run() {
 	LoadConfig()

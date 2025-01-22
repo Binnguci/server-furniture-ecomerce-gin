@@ -1,8 +1,8 @@
 package user
 
 import (
-	"_server-furniture-ecommerce-gin/internal/middleware"
 	"github.com/gin-gonic/gin"
+	"server-book-ecommerce-gin/internal/middleware"
 )
 
 type UserRouter struct{}

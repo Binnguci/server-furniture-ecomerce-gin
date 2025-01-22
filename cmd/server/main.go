@@ -1,6 +1,6 @@
 package main
 
-import "_server-furniture-ecommerce-gin/internal/initialize"
+import "server-book-ecommerce-gin/internal/initialize"
 
 func main() {
 	initialize.Run()

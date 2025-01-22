@@ -1,10 +1,10 @@
 package initialize
 
 import (
-	"_server-furniture-ecommerce-gin/global"
-	"_server-furniture-ecommerce-gin/internal/middleware"
-	"_server-furniture-ecommerce-gin/internal/router"
 	"github.com/gin-gonic/gin"
+	"server-book-ecommerce-gin/global"
+	"server-book-ecommerce-gin/internal/middleware"
+	"server-book-ecommerce-gin/internal/router"
 )
 
 func InitRouter() *gin.Engine {
@@ -19,6 +19,7 @@ func InitRouter() *gin.Engine {
 	}
 	//middleware
 	r.Use(middleware.AuthenticationMiddleware())
+	r.Use(middleware.CorsMiddleware())
 	// .. các middleware khác
 	userRouter := router.RouterGroupApp.User
 	//adminRouter := router.RouterGroupApp.Admin

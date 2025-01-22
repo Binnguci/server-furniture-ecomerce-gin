@@ -1,11 +1,11 @@
 package initialize
 
 import (
-	"_server-furniture-ecommerce-gin/global"
 	"context"
 	"fmt"
 	"github.com/redis/go-redis/v9"
 	"go.uber.org/zap"
+	"server-book-ecommerce-gin/global"
 )
 
 var ctx = context.Background()
