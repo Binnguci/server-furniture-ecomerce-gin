@@ -13,6 +13,9 @@ const (
 	InternalServerErrorCode = 500
 	ServiceUnavailableCode  = 503
 	GatewayTimeoutCode      = 504
+	UserExistsCode          = 1001
+	ErrorInvalidOTP         = 1002
+	ErrorSendEmail          = 1003
 )
 
 var message = map[int]string{
@@ -28,6 +31,9 @@ var message = map[int]string{
 	InternalServerErrorCode: "Internal server error: Something went wrong",
 	ServiceUnavailableCode:  "Service unavailable: Please try again later",
 	GatewayTimeoutCode:      "Gateway timeout: Request timed out",
+	UserExistsCode:          "User already exists",
+	ErrorInvalidOTP:         "Invalid OTP",
+	ErrorSendEmail:          "Error when send email",
 }
 
 func GetMessage(code int) string {
