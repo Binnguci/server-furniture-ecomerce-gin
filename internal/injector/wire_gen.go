@@ -7,7 +7,6 @@
 package injector
 
 import (
-	"gorm.io/gorm"
 	"server-book-ecommerce-gin/internal/controller"
 	"server-book-ecommerce-gin/internal/repository"
 	"server-book-ecommerce-gin/internal/service"
@@ -15,8 +14,8 @@ import (
 
 // Injectors from user.wire.go:
 
-func InitUserControllerHandler(db *gorm.DB) (*controller.UserController, error) {
-	iUserRepository := repository.NewUserRepository(db)
+func InitUserControllerHandler() (*controller.UserController, error) {
+	iUserRepository := repository.NewUserRepository()
 	iUserService := service.NewUserService(iUserRepository)
 	userController := controller.NewUserController(iUserService)
 	return userController, nil

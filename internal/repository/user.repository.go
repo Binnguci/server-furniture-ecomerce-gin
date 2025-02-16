@@ -1,11 +1,6 @@
 package repository
 
-import (
-	"server-book-ecommerce-gin/internal/model"
-)
-
 type IUserRepository interface {
-	Register(user *model.User) error
 	GetUserByEmail(email string) bool
 }
 
@@ -21,7 +16,7 @@ func (*UserRepositoryImpl) GetUserByEmail(email string) bool {
 	return true
 }
 
-func (uri *UserRepositoryImpl) Register(user *model.User) error {
+func (uri *UserRepositoryImpl) Register() error {
 
 	return nil
 }

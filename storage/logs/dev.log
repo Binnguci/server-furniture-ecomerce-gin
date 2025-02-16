@@ -36,3 +36,9 @@
 {"level":"INFO","timestamp":"2025-01-21T01:19:10.825+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
 {"level":"INFO","timestamp":"2025-01-21T01:19:10.826+0700","caller":"initialize/mysql.go:27","msg":"mysql connect success"}
 {"level":"INFO","timestamp":"2025-01-21T01:19:11.034+0700","caller":"initialize/redis.go:41","msg":"Value score is::","score":"100"}
+{"level":"INFO","timestamp":"2025-02-16T14:14:22.870+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-02-16T14:14:22.871+0700","caller":"initialize/mysql.go:27","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-02-16T14:14:23.115+0700","caller":"initialize/redis.go:41","msg":"Value score is::","score":"100"}
+{"level":"INFO","timestamp":"2025-02-16T14:18:42.051+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-02-16T14:18:42.053+0700","caller":"initialize/mysql.go:27","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-02-16T14:18:42.238+0700","caller":"initialize/redis.go:41","msg":"Value score is::","score":"100"}

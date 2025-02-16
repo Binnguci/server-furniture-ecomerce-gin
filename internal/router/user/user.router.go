@@ -2,7 +2,6 @@ package user
 
 import (
 	"github.com/gin-gonic/gin"
-	"gorm.io/gorm"
 	"server-book-ecommerce-gin/internal/injector"
 	"server-book-ecommerce-gin/internal/middleware"
 )
