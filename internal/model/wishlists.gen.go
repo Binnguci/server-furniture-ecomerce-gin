@@ -4,23 +4,12 @@
 
 package model
 
-import (
-	"server-book-ecommerce-gin/internal/constant"
-	"time"
-
-	"gorm.io/gorm"
-)
-
-const TableNameWishlist = constant.WishlistTable
+const TableNameWishlist = "wishlists"
 
 // Wishlist mapped from table <wishlists>
 type Wishlist struct {
-	ID        int32          `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
-	UserID    int64          `gorm:"column:user_id;not null" json:"user_id"`
-	ProductID int32          `gorm:"column:product_id;not null" json:"product_id"`
-	CreatedAt time.Time      `gorm:"column:created_at;default:CURRENT_TIMESTAMP" json:"created_at"`
-	UpdatedAt time.Time      `gorm:"column:updated_at;default:CURRENT_TIMESTAMP" json:"updated_at"`
-	DeletedAt gorm.DeletedAt `gorm:"column:deleted_at" json:"deleted_at"`
+	UserID string `gorm:"column:user_id;primaryKey" json:"user_id"`
+	CarID  int32  `gorm:"column:car_id;primaryKey" json:"car_id"`
 }
 
 // TableName Wishlist's table name

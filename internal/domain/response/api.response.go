@@ -3,7 +3,7 @@ package response
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"server-book-ecommerce-gin/pkg/exception"
+	"server-car-rental-ecommerce-gin/pkg/exception"
 )
 
 type ResponseStruct struct {

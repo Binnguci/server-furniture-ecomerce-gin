@@ -8,18 +8,18 @@ import (
 	"time"
 )
 
-const TableNameRefreshToken = "refresh_tokens"
+const TableNameCarModel = "car_models"
 
-// RefreshToken mapped from table <refresh_tokens>
-type RefreshToken struct {
+// CarModel mapped from table <car_models>
+type CarModel struct {
 	ID        int32     `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
-	UserID    string    `gorm:"column:user_id" json:"user_id"`
-	Token     string    `gorm:"column:token;not null" json:"token"`
+	Name      string    `gorm:"column:name;not null" json:"name"`
+	BrandID   int32     `gorm:"column:brand_id" json:"brand_id"`
 	CreatedAt time.Time `gorm:"column:created_at;default:CURRENT_TIMESTAMP" json:"created_at"`
 	UpdatedAt time.Time `gorm:"column:updated_at;default:CURRENT_TIMESTAMP" json:"updated_at"`
 }
 
-// TableName RefreshToken's table name
-func (*RefreshToken) TableName() string {
-	return TableNameRefreshToken
+// TableName CarModel's table name
+func (*CarModel) TableName() string {
+	return TableNameCarModel
 }

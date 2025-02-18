@@ -1,10 +1,11 @@
 package initialize
 
 import (
+	helmet "github.com/danielkov/gin-helmet"
 	"github.com/gin-gonic/gin"
-	"server-book-ecommerce-gin/global"
-	"server-book-ecommerce-gin/internal/middleware"
-	"server-book-ecommerce-gin/internal/router"
+	"server-car-rental-ecommerce-gin/global"
+	"server-car-rental-ecommerce-gin/internal/middleware"
+	"server-car-rental-ecommerce-gin/internal/router"
 )
 
 func InitRouter() *gin.Engine {
@@ -18,8 +19,8 @@ func InitRouter() *gin.Engine {
 		gin.New()
 	}
 	//middleware
-	r.Use(middleware.AuthenticationMiddleware())
 	r.Use(middleware.CorsMiddleware())
+	r.Use(helmet.Default())
 	// .. các middleware khác
 	userRouter := router.RouterGroupApp.User
 	//adminRouter := router.RouterGroupApp.Admin

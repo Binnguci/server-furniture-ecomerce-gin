@@ -3,10 +3,10 @@ package initialize
 import (
 	"fmt"
 	"go.uber.org/zap"
-	"gorm.io/driver/mysql"
+	"gorm.io/driver/postgres"
 	"gorm.io/gen"
 	"gorm.io/gorm"
-	"server-book-ecommerce-gin/global"
+	"server-car-rental-ecommerce-gin/global"
 	"time"
 )
 
@@ -18,20 +18,20 @@ func checkErrorPanic(err error, errStr string) {
 }
 
 func InitMySQL() {
-	m := global.Config.MySQL
-	dsn := "%s:%s@tcp(%s:%v)/%s?charset=utf8mb4&parseTime=True&loc=Local"
-	var s = fmt.Sprintf(dsn, m.Username, m.Password, m.Host, m.Port, m.Database)
-	db, err := gorm.Open(mysql.Open(s), &gorm.Config{})
+	p := global.Config.PostgreSQL
+	dsn := "host=%s port=%d user=%s password=%s dbname=%s sslmode=disable TimeZone=Asia/Ho_Chi_Minh"
+	var s = fmt.Sprintf(dsn, p.Host, p.Port, p.Username, p.Password, p.Database)
+	db, err := gorm.Open(postgres.Open(s), &gorm.Config{})
 
 	checkErrorPanic(err, "gorm.Open failed")
-	global.Logger.Info("mysql connect success")
+	global.Logger.Info("postgreSQL connect success")
 	global.Mdb = db
 	genEntity()
 	SetPool()
 }
 
 func SetPool() {
-	m := global.Config.MySQL
+	m := global.Config.PostgreSQL
 	mysql, err := global.Mdb.DB()
 	if err != nil {
 		global.Logger.Error("SetPool failed", zap.Error(err))
@@ -44,7 +44,7 @@ func SetPool() {
 
 func genEntity() {
 	g := gen.NewGenerator(gen.Config{
-		OutPath: "./internal/models",
+		OutPath: "./internal/model",
 		Mode:    gen.WithoutContext | gen.WithDefaultQuery | gen.WithQueryInterface,
 	})
 	g.UseDB(global.Mdb)

@@ -7,7 +7,7 @@ import (
 	"go.uber.org/zap/zapcore"
 	"os"
 	"path/filepath"
-	"server-book-ecommerce-gin/pkg/setting"
+	"server-car-rental-ecommerce-gin/pkg/setting"
 	"strings"
 )
 

@@ -8,10 +8,10 @@ import (
 	"time"
 )
 
-const TableNameRole = "roles"
+const TableNamePermission = "permissions"
 
-// Role mapped from table <roles>
-type Role struct {
+// Permission mapped from table <permissions>
+type Permission struct {
 	ID          int32     `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
 	Name        string    `gorm:"column:name;not null" json:"name"`
 	Description string    `gorm:"column:description" json:"description"`
@@ -19,7 +19,7 @@ type Role struct {
 	UpdatedAt   time.Time `gorm:"column:updated_at;default:CURRENT_TIMESTAMP" json:"updated_at"`
 }
 
-// TableName Role's table name
-func (*Role) TableName() string {
-	return TableNameRole
+// TableName Permission's table name
+func (*Permission) TableName() string {
+	return TableNamePermission
 }

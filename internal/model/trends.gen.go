@@ -5,25 +5,24 @@
 package model
 
 import (
-	"server-book-ecommerce-gin/internal/constant"
 	"time"
 
 	"gorm.io/gorm"
 )
 
-const TableNamePolicy = constant.PolicyTable
+const TableNameTrend = "trends"
 
-// Policy mapped from table <policies>
-type Policy struct {
+// Trend mapped from table <trends>
+type Trend struct {
 	ID        int32          `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
-	Title     string         `gorm:"column:title;not null" json:"title"`
-	Content   string         `gorm:"column:content" json:"content"`
+	CarID     int32          `gorm:"column:car_id" json:"car_id"`
+	TrendType string         `gorm:"column:trend_type;not null" json:"trend_type"`
 	CreatedAt time.Time      `gorm:"column:created_at;default:CURRENT_TIMESTAMP" json:"created_at"`
 	UpdatedAt time.Time      `gorm:"column:updated_at;default:CURRENT_TIMESTAMP" json:"updated_at"`
 	DeletedAt gorm.DeletedAt `gorm:"column:deleted_at" json:"deleted_at"`
 }
 
-// TableName Policy's table name
-func (*Policy) TableName() string {
-	return TableNamePolicy
+// TableName Trend's table name
+func (*Trend) TableName() string {
+	return TableNameTrend
 }

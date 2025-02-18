@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"go.uber.org/zap"
 	"net/smtp"
-	"server-book-ecommerce-gin/global"
-	"server-book-ecommerce-gin/internal/constant"
+	"server-car-rental-ecommerce-gin/global"
+	"server-car-rental-ecommerce-gin/internal/constant"
 	"strings"
 )
 

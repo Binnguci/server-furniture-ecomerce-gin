@@ -2,8 +2,7 @@ package controller
 
 import (
 	"net/http"
-	"server-book-ecommerce-gin/internal/domain/request"
-	"server-book-ecommerce-gin/internal/service"
+	"server-car-rental-ecommerce-gin/internal/service"
 
 	"github.com/gin-gonic/gin"
 )
@@ -17,12 +16,7 @@ func NewUserController(userService service.IUserService) *UserController {
 }
 
 func (uc *UserController) Register(c *gin.Context) {
-	var registerRequest request.RegisterRequest
-
-	// Bind JSON từ request body
-	if err := c.ShouldBindJSON(&registerRequest); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": "Dữ liệu không hợp lệ"})
-		return
-	}
-
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Đăng ký thành công",
+	})
 }

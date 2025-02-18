@@ -1,6 +1,6 @@
 package main
 
-import "server-book-ecommerce-gin/internal/initialize"
+import "server-car-rental-ecommerce-gin/internal/initialize"
 
 func main() {
 	initialize.Run()

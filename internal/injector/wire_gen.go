@@ -7,9 +7,9 @@
 package injector
 
 import (
-	"server-book-ecommerce-gin/internal/controller"
-	"server-book-ecommerce-gin/internal/repository"
-	"server-book-ecommerce-gin/internal/service"
+	"server-car-rental-ecommerce-gin/internal/controller"
+	"server-car-rental-ecommerce-gin/internal/repository"
+	"server-car-rental-ecommerce-gin/internal/service"
 )
 
 // Injectors from user.wire.go:

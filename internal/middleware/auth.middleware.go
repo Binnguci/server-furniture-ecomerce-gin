@@ -2,8 +2,8 @@ package middleware
 
 import (
 	"github.com/gin-gonic/gin"
-	"server-book-ecommerce-gin/internal/domain/response"
-	"server-book-ecommerce-gin/pkg/exception"
+	"server-car-rental-ecommerce-gin/internal/domain/response"
+	"server-car-rental-ecommerce-gin/pkg/exception"
 )
 
 func AuthenticationMiddleware() gin.HandlerFunc {

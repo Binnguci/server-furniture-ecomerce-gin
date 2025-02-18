@@ -42,3 +42,19 @@
 {"level":"INFO","timestamp":"2025-02-16T14:18:42.051+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
 {"level":"INFO","timestamp":"2025-02-16T14:18:42.053+0700","caller":"initialize/mysql.go:27","msg":"mysql connect success"}
 {"level":"INFO","timestamp":"2025-02-16T14:18:42.238+0700","caller":"initialize/redis.go:41","msg":"Value score is::","score":"100"}
+{"level":"INFO","timestamp":"2025-02-17T13:18:22.043+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-02-17T13:18:22.045+0700","caller":"initialize/mysql.go:27","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-02-17T13:18:58.929+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-02-17T13:18:58.931+0700","caller":"initialize/mysql.go:27","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-02-17T13:19:53.874+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-02-17T13:19:53.876+0700","caller":"initialize/mysql.go:27","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-02-17T13:54:17.098+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-02-17T13:54:17.100+0700","caller":"initialize/mysql.go:27","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-02-17T13:56:21.521+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-02-17T13:56:21.524+0700","caller":"initialize/mysql.go:27","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-02-17T13:57:32.450+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-02-17T13:57:32.451+0700","caller":"initialize/mysql.go:27","msg":"mysql connect success"}
+{"level":"INFO","timestamp":"2025-02-18T16:29:43.670+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"ERROR","timestamp":"2025-02-18T16:29:43.672+0700","caller":"initialize/mysql.go:15","msg":"gorm.Open failed","error":"failed to connect to `host=127.0.0.1 user=postgres database=furniture`: failed to receive message (unknown message type: [)","stacktrace":"server-car-rental-ecommerce-gin/internal/initialize.checkErrorPanic\n\t/home/binnguci/Source/book_app/server-car-rental-ecommerce-gin/internal/initialize/mysql.go:15\nserver-car-rental-ecommerce-gin/internal/initialize.InitMySQL\n\t/home/binnguci/Source/book_app/server-car-rental-ecommerce-gin/internal/initialize/mysql.go:26\nserver-car-rental-ecommerce-gin/internal/initialize.Run\n\t/home/binnguci/Source/book_app/server-car-rental-ecommerce-gin/internal/initialize/run.go:9\nmain.main\n\t/home/binnguci/Source/book_app/server-car-rental-ecommerce-gin/cmd/server/main.go:6\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:272"}
+{"level":"INFO","timestamp":"2025-02-18T16:31:41.421+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-02-18T16:31:41.425+0700","caller":"initialize/mysql.go:27","msg":"postgreSQL connect success"}

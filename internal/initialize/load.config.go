@@ -3,7 +3,7 @@ package initialize
 import (
 	"fmt"
 	"github.com/spf13/viper"
-	"server-book-ecommerce-gin/global"
+	"server-car-rental-ecommerce-gin/global"
 )
 
 func LoadConfig() {

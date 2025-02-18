@@ -1,6 +1,6 @@
 package initialize
 
-import "server-book-ecommerce-gin/global"
+import "server-car-rental-ecommerce-gin/global"
 
 func Run() {
 	LoadConfig()
