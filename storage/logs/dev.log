@@ -82,3 +82,7 @@
 {"level":"INFO","timestamp":"2025-02-18T19:45:45.286+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
 {"level":"INFO","timestamp":"2025-02-18T19:50:14.400+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
 {"level":"INFO","timestamp":"2025-02-18T19:50:19.312+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T20:27:31.054+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T20:29:54.423+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T20:47:24.770+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T21:01:52.767+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}

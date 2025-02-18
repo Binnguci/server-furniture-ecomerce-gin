@@ -21,7 +21,8 @@ func InitRouter() *gin.Engine {
 	//middleware
 	r.Use(middleware.CorsMiddleware())
 	r.Use(helmet.Default())
-	// .. các middleware khác
+	r.Use(middleware.RateLimitMiddleware())
+
 	userRouter := router.RouterGroupApp.User
 	//adminRouter := router.RouterGroupApp.Admin
 
