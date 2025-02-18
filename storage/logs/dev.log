@@ -70,3 +70,15 @@
 {"level":"INFO","timestamp":"2025-02-18T17:54:46.778+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
 {"level":"INFO","timestamp":"2025-02-18T17:55:04.635+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
 {"level":"INFO","timestamp":"2025-02-18T17:57:00.577+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T18:08:57.945+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T18:09:04.357+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T18:47:05.945+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T19:03:10.400+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T19:13:52.791+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T19:15:36.550+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T19:19:09.172+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T19:26:53.668+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T19:33:00.619+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T19:45:45.286+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T19:50:14.400+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T19:50:19.312+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}

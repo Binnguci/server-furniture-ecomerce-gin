@@ -15,7 +15,7 @@ func PermissionMiddleware(requiredPermissions ...string) gin.HandlerFunc {
 			return
 		}
 
-		permissions, err := getUserPermissions(userID.(int))
+		permissions, err := getUserPermissions(userID.(string))
 		if err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Error retrieving permissions"})
 			c.Abort()
@@ -34,7 +34,7 @@ func PermissionMiddleware(requiredPermissions ...string) gin.HandlerFunc {
 	}
 }
 
-func getUserPermissions(userID int) ([]string, error) {
+func getUserPermissions(userID string) ([]string, error) {
 	var permissions []string
 	err := global.Pdb.
 		Table("permissions p").

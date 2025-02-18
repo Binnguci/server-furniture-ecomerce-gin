@@ -13,6 +13,6 @@ func Run() {
 	InitRouter()
 
 	r := InitRouter()
-	port := global.Config.Server
-	r.Run(":" + strconv.Itoa(port.Port))
+	port := global.Config.Server.Port
+	r.Run(":" + strconv.Itoa(port))
 }
