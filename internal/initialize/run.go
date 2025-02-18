@@ -1,15 +1,18 @@
 package initialize
 
-import "server-car-rental-ecommerce-gin/global"
+import (
+	"server-car-rental-ecommerce-gin/global"
+	"strconv"
+)
 
 func Run() {
 	LoadConfig()
 	InitLogger()
-	global.Logger.Info("Logger init success")
-	InitMySQL()
+	InitPostgreSQL()
 	InitRedis()
 	InitRouter()
 
 	r := InitRouter()
-	r.Run(":8082")
+	port := global.Config.Server
+	r.Run(":" + strconv.Itoa(port.Port))
 }

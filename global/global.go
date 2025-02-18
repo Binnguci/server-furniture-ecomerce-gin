@@ -10,6 +10,6 @@ import (
 var (
 	Config setting.Config
 	Logger *logger.LoggerZap
-	Mdb    *gorm.DB
+	Pdb    *gorm.DB
 	Rdb    *redis.Client
 )

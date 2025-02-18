@@ -17,7 +17,7 @@ func checkErrorPanic(err error, errStr string) {
 	}
 }
 
-func InitMySQL() {
+func InitPostgreSQL() {
 	p := global.Config.PostgreSQL
 	dsn := "host=%s port=%d user=%s password=%s dbname=%s sslmode=disable TimeZone=Asia/Ho_Chi_Minh"
 	var s = fmt.Sprintf(dsn, p.Host, p.Port, p.Username, p.Password, p.Database)
@@ -25,20 +25,20 @@ func InitMySQL() {
 
 	checkErrorPanic(err, "gorm.Open failed")
 	global.Logger.Info("postgreSQL connect success")
-	global.Mdb = db
-	genEntity()
+	global.Pdb = db
+	//genEntity()
 	SetPool()
 }
 
 func SetPool() {
-	m := global.Config.PostgreSQL
-	mysql, err := global.Mdb.DB()
+	p := global.Config.PostgreSQL
+	postgres, err := global.Pdb.DB()
 	if err != nil {
 		global.Logger.Error("SetPool failed", zap.Error(err))
 	}
-	mysql.SetMaxIdleConns(int(time.Duration(m.MaxIdleConns)))
-	mysql.SetConnMaxLifetime(time.Duration(m.ConnMaxLifetime))
-	mysql.SetMaxOpenConns(int(time.Duration(m.MaxOpenConns)))
+	postgres.SetMaxIdleConns(int(time.Duration(p.MaxIdleConns)))
+	postgres.SetConnMaxLifetime(time.Duration(p.ConnMaxLifetime))
+	postgres.SetMaxOpenConns(int(time.Duration(p.MaxOpenConns)))
 
 }
 
@@ -47,7 +47,7 @@ func genEntity() {
 		OutPath: "./internal/model",
 		Mode:    gen.WithoutContext | gen.WithDefaultQuery | gen.WithQueryInterface,
 	})
-	g.UseDB(global.Mdb)
+	g.UseDB(global.Pdb)
 	g.GenerateAllTable()
 	g.Execute()
 }

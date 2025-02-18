@@ -1,7 +1,7 @@
 package setting
 
 type Config struct {
-	PostgreSQL PostgresSetting `mapstructure:"mysql"`
+	PostgreSQL PostgresSetting `mapstructure:"postgres"`
 	Logger     LoggerSetting   `mapstructure:"log"`
 	Redis      RedisSetting    `mapstructure:"redis"`
 	Server     ServerSetting   `mapstructure:"server"`

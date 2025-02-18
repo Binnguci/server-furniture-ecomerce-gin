@@ -58,3 +58,15 @@
 {"level":"ERROR","timestamp":"2025-02-18T16:29:43.672+0700","caller":"initialize/mysql.go:15","msg":"gorm.Open failed","error":"failed to connect to `host=127.0.0.1 user=postgres database=furniture`: failed to receive message (unknown message type: [)","stacktrace":"server-car-rental-ecommerce-gin/internal/initialize.checkErrorPanic\n\t/home/binnguci/Source/book_app/server-car-rental-ecommerce-gin/internal/initialize/mysql.go:15\nserver-car-rental-ecommerce-gin/internal/initialize.InitMySQL\n\t/home/binnguci/Source/book_app/server-car-rental-ecommerce-gin/internal/initialize/mysql.go:26\nserver-car-rental-ecommerce-gin/internal/initialize.Run\n\t/home/binnguci/Source/book_app/server-car-rental-ecommerce-gin/internal/initialize/run.go:9\nmain.main\n\t/home/binnguci/Source/book_app/server-car-rental-ecommerce-gin/cmd/server/main.go:6\nruntime.main\n\t/usr/local/go/src/runtime/proc.go:272"}
 {"level":"INFO","timestamp":"2025-02-18T16:31:41.421+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
 {"level":"INFO","timestamp":"2025-02-18T16:31:41.425+0700","caller":"initialize/mysql.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T16:39:40.154+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-02-18T16:39:40.159+0700","caller":"initialize/mysql.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T16:40:56.294+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-02-18T16:40:56.299+0700","caller":"initialize/mysql.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T16:44:32.787+0700","caller":"initialize/run.go:8","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-02-18T16:44:32.792+0700","caller":"initialize/mysql.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T16:47:02.866+0700","caller":"initialize/run.go:11","msg":"Logger init success"}
+{"level":"INFO","timestamp":"2025-02-18T16:47:02.871+0700","caller":"initialize/mysql.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T17:46:35.533+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T17:54:46.778+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T17:55:04.635+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
+{"level":"INFO","timestamp":"2025-02-18T17:57:00.577+0700","caller":"initialize/postgres.go:27","msg":"postgreSQL connect success"}
