@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/redis/go-redis/v9"
 	"go.uber.org/zap"
-	"server-car-rental-ecommerce-gin/global"
+	"server-furniture-ecommerce-gin/global"
 )
 
 var ctx = context.Background()

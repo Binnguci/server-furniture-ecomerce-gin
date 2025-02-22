@@ -3,9 +3,9 @@ package initialize
 import (
 	helmet "github.com/danielkov/gin-helmet"
 	"github.com/gin-gonic/gin"
-	"server-car-rental-ecommerce-gin/global"
-	"server-car-rental-ecommerce-gin/internal/middleware"
-	"server-car-rental-ecommerce-gin/internal/router"
+	"server-furniture-ecommerce-gin/global"
+	"server-furniture-ecommerce-gin/internal/middleware"
+	"server-furniture-ecommerce-gin/internal/router"
 )
 
 func InitRouter() *gin.Engine {
@@ -26,13 +26,12 @@ func InitRouter() *gin.Engine {
 	userRouter := router.RouterGroupApp.User
 	//adminRouter := router.RouterGroupApp.Admin
 
-	MainGroup := r.Group("/v1/api")
+	MainGroup := r.Group("/api")
 	{
 		MainGroup.GET("/check-status") // tracking monitor
 	}
 	{
 		userRouter.InitUserRouter(MainGroup)
-		userRouter.InitProductRouter(MainGroup)
 	}
 	//{
 	//	adminRouter.InitUserRouter(MainGroup)

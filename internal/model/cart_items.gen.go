@@ -10,19 +10,20 @@ import (
 	"gorm.io/gorm"
 )
 
-const TableNameWishlist = "wishlists"
+const TableNameCartItem = "cart_items"
 
-// Wishlist mapped from table <wishlists>
-type Wishlist struct {
-	ID        int32          `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
-	UserID    int64          `gorm:"column:user_id;not null" json:"user_id"`
+// CartItem mapped from table <cart_items>
+type CartItem struct {
+	ID        string         `gorm:"column:id;primaryKey" json:"id"`
 	ProductID int32          `gorm:"column:product_id;not null" json:"product_id"`
+	CartID    string         `gorm:"column:cart_id;not null" json:"cart_id"`
+	Quantity  int32          `gorm:"column:quantity;default:1" json:"quantity"`
 	CreatedAt time.Time      `gorm:"column:created_at;default:CURRENT_TIMESTAMP" json:"created_at"`
 	UpdatedAt time.Time      `gorm:"column:updated_at;default:CURRENT_TIMESTAMP" json:"updated_at"`
 	DeletedAt gorm.DeletedAt `gorm:"column:deleted_at" json:"deleted_at"`
 }
 
-// TableName Wishlist's table name
-func (*Wishlist) TableName() string {
-	return TableNameWishlist
+// TableName CartItem's table name
+func (*CartItem) TableName() string {
+	return TableNameCartItem
 }

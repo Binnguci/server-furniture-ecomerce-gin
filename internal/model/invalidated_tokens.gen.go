@@ -8,16 +8,15 @@ import (
 	"time"
 )
 
-const TableNameRefreshToken = "refresh_tokens"
+const TableNameInvalidatedToken = "invalidated_tokens"
 
-// RefreshToken mapped from table <refresh_tokens>
-type RefreshToken struct {
+// InvalidatedToken mapped from table <invalidated_tokens>
+type InvalidatedToken struct {
 	TokenID string    `gorm:"column:token_id;primaryKey" json:"token_id"`
 	Expired time.Time `gorm:"column:expired" json:"expired"`
-	UserID  int64     `gorm:"column:user_id;not null" json:"user_id"`
 }
 
-// TableName RefreshToken's table name
-func (*RefreshToken) TableName() string {
-	return TableNameRefreshToken
+// TableName InvalidatedToken's table name
+func (*InvalidatedToken) TableName() string {
+	return TableNameInvalidatedToken
 }

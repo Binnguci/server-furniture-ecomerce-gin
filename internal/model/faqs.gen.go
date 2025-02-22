@@ -10,19 +10,19 @@ import (
 	"gorm.io/gorm"
 )
 
-const TableNameTrend = "trends"
+const TableNameFaq = "faqs"
 
-// Trend mapped from table <trends>
-type Trend struct {
+// Faq mapped from table <faqs>
+type Faq struct {
 	ID        int32          `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
-	CarID     int32          `gorm:"column:car_id" json:"car_id"`
-	TrendType string         `gorm:"column:trend_type;not null" json:"trend_type"`
+	Question  string         `gorm:"column:question;not null" json:"question"`
+	Answer    string         `gorm:"column:answer;not null" json:"answer"`
 	CreatedAt time.Time      `gorm:"column:created_at;default:CURRENT_TIMESTAMP" json:"created_at"`
 	UpdatedAt time.Time      `gorm:"column:updated_at;default:CURRENT_TIMESTAMP" json:"updated_at"`
 	DeletedAt gorm.DeletedAt `gorm:"column:deleted_at" json:"deleted_at"`
 }
 
-// TableName Trend's table name
-func (*Trend) TableName() string {
-	return TableNameTrend
+// TableName Faq's table name
+func (*Faq) TableName() string {
+	return TableNameFaq
 }

@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"go.uber.org/zap"
 	"net/smtp"
-	"server-car-rental-ecommerce-gin/global"
-	"server-car-rental-ecommerce-gin/internal/constant"
+	"server-furniture-ecommerce-gin/global"
+	"server-furniture-ecommerce-gin/internal/constant"
 	"strings"
 )
 
@@ -21,33 +21,29 @@ type Mail struct {
 	Body    string
 }
 
-const (
-	SMTPHost     = "smtp"
-	SMTPPort     = "587"
-	SMTPUSername = "tthanhbinh2757@gmail.com"
-	SMTPPassword = "ijnn asqn oedx adok"
-)
-
 func BuildMessage(mail Mail) string {
-	msg := "MIME-version: 1.0;\nContent-Type: text/html; charset=\"UTF-8\";\r\n"
-	msg += fmt.Sprintf("From: %s\r\n", mail.From.Address)
-	msg += fmt.Sprintf("To: %s\r\n", strings.Join(mail.To, ";"))
+	msg := fmt.Sprintf("From: %s <%s>\r\n", mail.From.Name, mail.From.Address)
+	msg += fmt.Sprintf("To: %s\r\n", strings.Join(mail.To, ", "))
 	msg += fmt.Sprintf("Subject: %s\r\n", mail.Subject)
-	msg += fmt.Sprintf("\r\n%s\r\n", mail.Body)
+	msg += "MIME-Version: 1.0\r\n"
+	msg += "Content-Type: text/html; charset=UTF-8\r\n\r\n"
+	msg += fmt.Sprintf("%s\r\n", mail.Body)
 	return msg
 }
 
 func SendOTPToEmail(to []string, from string, otp string) error {
-	contentEmail := Mail{From: EmailAddress{Address: from, Name: "test"},
+	contentEmail := Mail{
+		From:    EmailAddress{Address: from, Name: "test"},
 		To:      to,
 		Subject: constant.OTPVERIFY,
-		Body:    fmt.Sprintf("Your OTP is %s. Please enter it to verify your account.", otp)}
+		Body:    fmt.Sprintf("Your OTP is %s. Please enter it to verify your account.", otp),
+	}
 
 	messageMail := BuildMessage(contentEmail)
-	//send smtp
-	auth := smtp.PlainAuth("", SMTPUSername, SMTPPassword, SMTPHost)
+	mail := global.Config.Mail
+	auth := smtp.PlainAuth("", mail.Username, mail.Password, mail.Host)
 	err := smtp.SendMail(
-		fmt.Sprintf("%s:%s", SMTPHost, SMTPPort),
+		mail.Host+":"+mail.Port,
 		auth,
 		from,
 		to,

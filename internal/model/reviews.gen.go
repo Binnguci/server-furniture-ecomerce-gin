@@ -14,14 +14,16 @@ const TableNameReview = "reviews"
 
 // Review mapped from table <reviews>
 type Review struct {
-	ID        int32          `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
-	UserID    string         `gorm:"column:user_id" json:"user_id"`
-	CarID     int32          `gorm:"column:car_id" json:"car_id"`
-	Content   string         `gorm:"column:content;not null" json:"content"`
-	Rating    int16          `gorm:"column:rating" json:"rating"`
-	CreatedAt time.Time      `gorm:"column:created_at;default:CURRENT_TIMESTAMP" json:"created_at"`
-	UpdatedAt time.Time      `gorm:"column:updated_at;default:CURRENT_TIMESTAMP" json:"updated_at"`
-	DeletedAt gorm.DeletedAt `gorm:"column:deleted_at" json:"deleted_at"`
+	ID              int32          `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
+	ProductID       int32          `gorm:"column:product_id;not null" json:"product_id"`
+	UserID          int64          `gorm:"column:user_id;not null" json:"user_id"`
+	Rating          int32          `gorm:"column:rating;not null" json:"rating"`
+	Like            int32          `gorm:"column:like;not null" json:"like"`
+	Comment         string         `gorm:"column:comment" json:"comment"`
+	ReviewsParentID int64          `gorm:"column:reviews_parent_id;not null" json:"reviews_parent_id"`
+	CreatedAt       time.Time      `gorm:"column:created_at;default:CURRENT_TIMESTAMP" json:"created_at"`
+	UpdatedAt       time.Time      `gorm:"column:updated_at;default:CURRENT_TIMESTAMP" json:"updated_at"`
+	DeletedAt       gorm.DeletedAt `gorm:"column:deleted_at" json:"deleted_at"`
 }
 
 // TableName Review's table name

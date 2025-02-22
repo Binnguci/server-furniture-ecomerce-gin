@@ -1,14 +1,14 @@
 package initialize
 
 import (
-	"server-car-rental-ecommerce-gin/global"
+	"server-furniture-ecommerce-gin/global"
 	"strconv"
 )
 
 func Run() {
 	LoadConfig()
 	InitLogger()
-	InitPostgreSQL()
+	InitMySQL()
 	InitRedis()
 	InitRouter()
 

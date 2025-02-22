@@ -6,9 +6,9 @@ package injector
 import (
 	"github.com/google/wire"
 	"gorm.io/gorm"
-	"server-car-rental-ecommerce-gin/internal/controller"
-	"server-car-rental-ecommerce-gin/internal/repository"
-	"server-car-rental-ecommerce-gin/internal/service"
+	"server-furniture-ecommerce-gin/internal/controller"
+	"server-furniture-ecommerce-gin/internal/repository"
+	"server-furniture-ecommerce-gin/internal/service"
 )
 
 func InitUserControllerHandler(db *gorm.DB) (*controller.UserController, error) {
