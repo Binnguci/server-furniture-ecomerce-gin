@@ -1,11 +1,12 @@
 package initialize
 
 import (
-	"_server-furniture-ecommerce-gin/global"
 	"fmt"
 	"go.uber.org/zap"
 	"gorm.io/driver/mysql"
+	"gorm.io/gen"
 	"gorm.io/gorm"
+	"server-furniture-ecommerce-gin/global"
 	"time"
 )
 
@@ -23,9 +24,9 @@ func InitMySQL() {
 	db, err := gorm.Open(mysql.Open(s), &gorm.Config{})
 
 	checkErrorPanic(err, "gorm.Open failed")
-	global.Logger.Info("mysql connect success")
+	global.Logger.Info("MySQL connect success")
 	global.Mdb = db
-
+	//genEntity()
 	SetPool()
 }
 
@@ -41,6 +42,12 @@ func SetPool() {
 
 }
 
-func migrateTables(db *gorm.DB) {
-
+func genEntity() {
+	g := gen.NewGenerator(gen.Config{
+		OutPath: "./internal/model",
+		Mode:    gen.WithoutContext | gen.WithDefaultQuery | gen.WithQueryInterface,
+	})
+	g.UseDB(global.Mdb)
+	g.GenerateAllTable()
+	g.Execute()
 }

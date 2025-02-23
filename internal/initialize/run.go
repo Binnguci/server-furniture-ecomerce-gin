@@ -1,15 +1,18 @@
 package initialize
 
-import "_server-furniture-ecommerce-gin/global"
+import (
+	"server-furniture-ecommerce-gin/global"
+	"strconv"
+)
 
 func Run() {
 	LoadConfig()
 	InitLogger()
-	global.Logger.Info("Logger init success")
 	InitMySQL()
 	InitRedis()
 	InitRouter()
 
 	r := InitRouter()
-	r.Run(":8082")
+	port := global.Config.Server.Port
+	r.Run(":" + strconv.Itoa(port))
 }

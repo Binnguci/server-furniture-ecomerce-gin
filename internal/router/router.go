@@ -1,6 +1,6 @@
 package router
 
-import "_server-furniture-ecommerce-gin/internal/router/user"
+import "server-furniture-ecommerce-gin/internal/router/user"
 
 type RouterGroup struct {
 	User user.UserRouterGroup

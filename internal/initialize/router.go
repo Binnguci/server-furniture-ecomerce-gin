@@ -1,10 +1,11 @@
 package initialize
 
 import (
-	"_server-furniture-ecommerce-gin/global"
-	"_server-furniture-ecommerce-gin/internal/middleware"
-	"_server-furniture-ecommerce-gin/internal/router"
+	helmet "github.com/danielkov/gin-helmet"
 	"github.com/gin-gonic/gin"
+	"server-furniture-ecommerce-gin/global"
+	"server-furniture-ecommerce-gin/internal/middleware"
+	"server-furniture-ecommerce-gin/internal/router"
 )
 
 func InitRouter() *gin.Engine {
@@ -18,18 +19,19 @@ func InitRouter() *gin.Engine {
 		gin.New()
 	}
 	//middleware
-	r.Use(middleware.AuthenticationMiddleware())
-	// .. các middleware khác
+	r.Use(middleware.CorsMiddleware())
+	r.Use(helmet.Default())
+	r.Use(middleware.RateLimitMiddleware())
+
 	userRouter := router.RouterGroupApp.User
 	//adminRouter := router.RouterGroupApp.Admin
 
-	MainGroup := r.Group("/v1/api")
+	MainGroup := r.Group("/api")
 	{
 		MainGroup.GET("/check-status") // tracking monitor
 	}
 	{
 		userRouter.InitUserRouter(MainGroup)
-		userRouter.InitProductRouter(MainGroup)
 	}
 	//{
 	//	adminRouter.InitUserRouter(MainGroup)

@@ -1,13 +1,13 @@
 package logger
 
 import (
-	"_server-furniture-ecommerce-gin/pkg/setting"
 	"fmt"
 	"github.com/natefinch/lumberjack"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"os"
 	"path/filepath"
+	"server-furniture-ecommerce-gin/pkg/setting"
 	"strings"
 )
 

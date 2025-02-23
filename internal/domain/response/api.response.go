@@ -1,9 +1,9 @@
 package response
 
 import (
-	"_server-furniture-ecommerce-gin/pkg/exception"
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"server-furniture-ecommerce-gin/pkg/exception"
 )
 
 type ResponseStruct struct {

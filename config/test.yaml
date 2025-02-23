@@ -1,7 +1,7 @@
 server:
-  port: 8082
+  port: 8081
   mode: "dev"
-mysql:
+postgres:
   host:
   port:
   username:

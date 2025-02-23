@@ -1,9 +1,9 @@
 package middleware
 
 import (
-	"_server-furniture-ecommerce-gin/internal/domain/response"
-	"_server-furniture-ecommerce-gin/pkg/exception"
 	"github.com/gin-gonic/gin"
+	"server-furniture-ecommerce-gin/internal/domain/response"
+	"server-furniture-ecommerce-gin/pkg/exception"
 )
 
 func AuthenticationMiddleware() gin.HandlerFunc {

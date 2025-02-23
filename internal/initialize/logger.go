@@ -1,8 +1,8 @@
 package initialize
 
 import (
-	"_server-furniture-ecommerce-gin/global"
-	"_server-furniture-ecommerce-gin/pkg/logger"
+	"server-furniture-ecommerce-gin/global"
+	"server-furniture-ecommerce-gin/pkg/logger"
 )
 
 func InitLogger() {
