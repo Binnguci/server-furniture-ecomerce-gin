@@ -10,21 +10,24 @@ import (
 	"gorm.io/gorm"
 )
 
-const TableNameGift = "gifts"
+const TableNameProduct = "products"
 
-// Gift mapped from table <gifts>
-type Gift struct {
+// Product mapped from table <products>
+type Product struct {
 	ID          int32          `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
-	UserID      string         `gorm:"column:user_id" json:"user_id"`
 	Name        string         `gorm:"column:name;not null" json:"name"`
 	Description string         `gorm:"column:description" json:"description"`
-	Image       string         `gorm:"column:image;not null" json:"image"`
+	Price       float64        `gorm:"column:price" json:"price"`
+	Stock       int32          `gorm:"column:stock" json:"stock"`
+	CategoryID  int32          `gorm:"column:category_id;not null" json:"category_id"`
+	SupplierID  int32          `gorm:"column:supplier_id;not null" json:"supplier_id"`
+	IsActive    bool           `gorm:"column:is_active;default:1" json:"is_active"`
 	CreatedAt   time.Time      `gorm:"column:created_at;default:CURRENT_TIMESTAMP" json:"created_at"`
 	UpdatedAt   time.Time      `gorm:"column:updated_at;default:CURRENT_TIMESTAMP" json:"updated_at"`
 	DeletedAt   gorm.DeletedAt `gorm:"column:deleted_at" json:"deleted_at"`
 }
 
-// TableName Gift's table name
-func (*Gift) TableName() string {
-	return TableNameGift
+// TableName Product's table name
+func (*Product) TableName() string {
+	return TableNameProduct
 }

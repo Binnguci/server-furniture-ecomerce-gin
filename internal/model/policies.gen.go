@@ -10,19 +10,19 @@ import (
 	"gorm.io/gorm"
 )
 
-const TableNameWishlist = "wishlists"
+const TableNamePolicy = "policies"
 
-// Wishlist mapped from table <wishlists>
-type Wishlist struct {
+// Policy mapped from table <policies>
+type Policy struct {
 	ID        int32          `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
-	UserID    int64          `gorm:"column:user_id;not null" json:"user_id"`
-	ProductID int32          `gorm:"column:product_id;not null" json:"product_id"`
+	Title     string         `gorm:"column:title;not null" json:"title"`
+	Content   string         `gorm:"column:content" json:"content"`
 	CreatedAt time.Time      `gorm:"column:created_at;default:CURRENT_TIMESTAMP" json:"created_at"`
 	UpdatedAt time.Time      `gorm:"column:updated_at;default:CURRENT_TIMESTAMP" json:"updated_at"`
 	DeletedAt gorm.DeletedAt `gorm:"column:deleted_at" json:"deleted_at"`
 }
 
-// TableName Wishlist's table name
-func (*Wishlist) TableName() string {
-	return TableNameWishlist
+// TableName Policy's table name
+func (*Policy) TableName() string {
+	return TableNamePolicy
 }

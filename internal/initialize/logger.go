@@ -1,8 +1,8 @@
 package initialize
 
 import (
-	"server-car-rental-ecommerce-gin/global"
-	"server-car-rental-ecommerce-gin/pkg/logger"
+	"server-furniture-ecommerce-gin/global"
+	"server-furniture-ecommerce-gin/pkg/logger"
 )
 
 func InitLogger() {

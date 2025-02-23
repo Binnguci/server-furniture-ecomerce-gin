@@ -10,13 +10,12 @@ import (
 	"server-furniture-ecommerce-gin/internal/service"
 )
 
-func InitUserControllerHandler() (*controller.UserController, error) {
+func InitAuthControllerHandler() (*controller.AuthController, error) {
 	wire.Build(
-		repository.NewUserRepository,
-		repository.NewRoleReppository,
 		repository.NewAuthRepository,
-		service.NewUserService,
-		controller.NewUserController,
+		repository.NewUserRepository,
+		service.NewAuthService,
+		controller.NewAuthController,
 	)
-	return &controller.UserController{}, nil
+	return &controller.AuthController{}, nil
 }

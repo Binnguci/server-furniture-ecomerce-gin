@@ -3,7 +3,7 @@ package middleware
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"server-car-rental-ecommerce-gin/global"
+	"server-furniture-ecommerce-gin/global"
 )
 
 func PermissionMiddleware(requiredPermissions ...string) gin.HandlerFunc {
@@ -36,7 +36,7 @@ func PermissionMiddleware(requiredPermissions ...string) gin.HandlerFunc {
 
 func getUserPermissions(userID string) ([]string, error) {
 	var permissions []string
-	err := global.Pdb.
+	err := global.Mdb.
 		Table("permissions p").
 		Select("p.name").
 		Joins("JOIN role_permissions rp ON p.id = rp.permission_id").

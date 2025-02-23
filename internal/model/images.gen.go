@@ -10,19 +10,19 @@ import (
 	"gorm.io/gorm"
 )
 
-const TableNameWishlist = "wishlists"
+const TableNameImage = "images"
 
-// Wishlist mapped from table <wishlists>
-type Wishlist struct {
+// Image mapped from table <images>
+type Image struct {
 	ID        int32          `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
-	UserID    int64          `gorm:"column:user_id;not null" json:"user_id"`
 	ProductID int32          `gorm:"column:product_id;not null" json:"product_id"`
+	ImageURL  string         `gorm:"column:image_url;not null" json:"image_url"`
 	CreatedAt time.Time      `gorm:"column:created_at;default:CURRENT_TIMESTAMP" json:"created_at"`
 	UpdatedAt time.Time      `gorm:"column:updated_at;default:CURRENT_TIMESTAMP" json:"updated_at"`
 	DeletedAt gorm.DeletedAt `gorm:"column:deleted_at" json:"deleted_at"`
 }
 
-// TableName Wishlist's table name
-func (*Wishlist) TableName() string {
-	return TableNameWishlist
+// TableName Image's table name
+func (*Image) TableName() string {
+	return TableNameImage
 }

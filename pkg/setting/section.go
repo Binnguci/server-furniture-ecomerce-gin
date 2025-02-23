@@ -1,10 +1,11 @@
 package setting
 
 type Config struct {
-	PostgreSQL PostgresSetting `mapstructure:"postgres"`
-	Logger     LoggerSetting   `mapstructure:"log"`
-	Redis      RedisSetting    `mapstructure:"redis"`
-	Server     ServerSetting   `mapstructure:"server"`
+	MySQL  MySQLSetting  `mapstructure:"mysql"`
+	Logger LoggerSetting `mapstructure:"log"`
+	Redis  RedisSetting  `mapstructure:"redis"`
+	Server ServerSetting `mapstructure:"server"`
+	Mail   MailSetting   `mapstructure:"mail"`
 }
 
 type ServerSetting struct {
@@ -12,7 +13,7 @@ type ServerSetting struct {
 	Mode string `mapstructure:"mode"`
 }
 
-type PostgresSetting struct {
+type MySQLSetting struct {
 	Host            string `mapstructure:"host"`
 	Port            int    `mapstructure:"port"`
 	Username        string `mapstructure:"username"`
@@ -38,4 +39,11 @@ type RedisSetting struct {
 	Password string `mapstructure:"password"`
 	Database int    `mapstructure:"database"`
 	PoolSize int    `mapstructure:"pool_size"`
+}
+
+type MailSetting struct {
+	Host     string `mapstructure:"host"`
+	Port     string `mapstructure:"port"`
+	Password string `mapstructure:"password"`
+	Username string `mapstructure:"username"`
 }

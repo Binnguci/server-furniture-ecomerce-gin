@@ -3,6 +3,7 @@ package exception
 const (
 	SuccessCode             = 200
 	CreateSuccessCode       = 201
+	CreateFailedCode        = 1004
 	AcceptedCode            = 202
 	BadRequestCode          = 400
 	UnauthorizedCode        = 401
@@ -16,6 +17,7 @@ const (
 	UserExistsCode          = 1001
 	ErrorInvalidOTP         = 1002
 	ErrorSendEmail          = 1003
+	ErrorUpdateCode         = 3001
 )
 
 var message = map[int]string{
@@ -34,6 +36,8 @@ var message = map[int]string{
 	UserExistsCode:          "User already exists",
 	ErrorInvalidOTP:         "Invalid OTP",
 	ErrorSendEmail:          "Error when send email",
+	CreateFailedCode:        "Error when create",
+	ErrorUpdateCode:         "Error when update db",
 }
 
 func GetMessage(code int) string {
