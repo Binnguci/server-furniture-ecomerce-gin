@@ -22,12 +22,14 @@ type IUserService interface {
 type UserServiceImpl struct {
 	userRepository repository.IUserRepository
 	roleRepository repository.IRoleRepository
+	authRepository repository.IAuthRepository
 }
 
-func NewUserService(userRepo repository.IUserRepository, roleRepo repository.IRoleRepository) IUserService {
+func NewUserService(userRepo repository.IUserRepository, roleRepo repository.IRoleRepository, authRepo repository.IAuthRepository) IUserService {
 	return &UserServiceImpl{
 		userRepository: userRepo,
 		roleRepository: roleRepo,
+		authRepository: authRepo,
 	}
 }
 
@@ -46,6 +48,17 @@ func (usi *UserServiceImpl) Register(register request.RegisterRequest) int {
 
 	otp := usi.generateAndSetOTP(user)
 
+	otpInt, err := strconv.Atoi(otp)
+	if err != nil {
+		return exception.ErrorInvalidOTP
+	}
+
+	expirationTime := time.Now().Add(3 * time.Minute).Unix()
+
+	err = usi.authRepository.AddOTP(user.Email, otpInt, expirationTime)
+	if err != nil {
+		return exception.ErrorInvalidOTP
+	}
 	hashedPassword := crypto.GetHash(user.Password)
 	user.Password = hashedPassword
 

@@ -1,5 +1,5 @@
 package constant
 
 const (
-	OTPVERIFY = "OTP Verification"
+	VERIFY_ACCOUNT = "Verify Account"
 )

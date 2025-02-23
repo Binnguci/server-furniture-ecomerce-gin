@@ -11,10 +11,13 @@ type UserRouter struct{}
 func (ur *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 
 	userController, _ := injector.InitUserControllerHandler()
+	authController, _ := injector.InitAuthControllerHandler()
+
 	//public router
-	userRouterPublic := Router.Group("/user")
+	userRouterPublic := Router.Group("/auth")
 	{
 		userRouterPublic.POST("/register", userController.Register)
+		userRouterPublic.GET("/confirm-account", authController.VerifyAccount)
 	}
 
 	//private router
@@ -22,6 +25,5 @@ func (ur *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 	userRouterPrivate.Use(middleware.AuthenticationMiddleware())
 	userRouterPrivate.Use(middleware.PermissionMiddleware())
 	{
-
 	}
 }

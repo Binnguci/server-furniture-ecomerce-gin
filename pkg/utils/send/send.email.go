@@ -33,10 +33,10 @@ func BuildMessage(mail Mail) string {
 
 func SendOTPToEmail(to []string, from string, otp string) error {
 	contentEmail := Mail{
-		From:    EmailAddress{Address: from, Name: "test"},
+		From:    EmailAddress{Address: from, Name: "Furni Luxury"},
 		To:      to,
-		Subject: constant.OTPVERIFY,
-		Body:    fmt.Sprintf("Your OTP is %s. Please enter it to verify your account.", otp),
+		Subject: constant.VERIFY_ACCOUNT,
+		Body:    fmt.Sprintf(constant.TEMPLATE_VERIFY_ACCOUNT, otp),
 	}
 
 	messageMail := BuildMessage(contentEmail)
