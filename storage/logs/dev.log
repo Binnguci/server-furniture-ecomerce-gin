@@ -93,3 +93,8 @@
 {"level":"INFO","timestamp":"2025-02-23T23:22:56.603+0700","caller":"initialize/mysql.go:27","msg":"MySQL connect success"}
 {"level":"INFO","timestamp":"2025-02-23T23:23:01.954+0700","caller":"controller/user.controller.go:27","msg":"Received Register Request","email":"thanhbinh2757@gmail.com"}
 {"level":"INFO","timestamp":"2025-02-23T23:23:01.956+0700","caller":"service/user.service.go:94","msg":"Generated OTP","otp":"625116"}
+{"level":"INFO","timestamp":"2025-02-24T15:38:47.627+0700","caller":"initialize/mysql.go:27","msg":"MySQL connect success"}
+{"level":"INFO","timestamp":"2025-02-24T15:38:57.100+0700","caller":"initialize/mysql.go:27","msg":"MySQL connect success"}
+{"level":"INFO","timestamp":"2025-02-25T13:00:36.065+0700","caller":"initialize/mysql.go:27","msg":"MySQL connect success"}
+{"level":"INFO","timestamp":"2025-02-25T13:15:12.875+0700","caller":"initialize/mysql.go:27","msg":"MySQL connect success"}
+{"level":"WARN","timestamp":"2025-02-25T13:16:25.151+0700","caller":"repository/auth.repository.go:50","msg":"Invalid password attempt","username":"binnguci"}

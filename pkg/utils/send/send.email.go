@@ -9,17 +9,19 @@ import (
 	"strings"
 )
 
-type EmailAddress struct {
-	Address string `json:"address"`
-	Name    string `json:"name"`
-}
+type (
+	EmailAddress struct {
+		Address string `json:"address"`
+		Name    string `json:"name"`
+	}
 
-type Mail struct {
-	From    EmailAddress
-	To      []string
-	Subject string
-	Body    string
-}
+	Mail struct {
+		From    EmailAddress
+		To      []string
+		Subject string
+		Body    string
+	}
+)
 
 func BuildMessage(mail Mail) string {
 	msg := fmt.Sprintf("From: %s <%s>\r\n", mail.From.Name, mail.From.Address)
