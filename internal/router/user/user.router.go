@@ -18,6 +18,7 @@ func (ur *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 	{
 		userRouterPublic.POST("/register", userController.Register)
 		userRouterPublic.GET("/confirm-account", authController.VerifyAccount)
+		userRouterPublic.POST("/login", authController.Login)
 	}
 
 	//private router

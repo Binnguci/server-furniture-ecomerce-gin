@@ -15,6 +15,7 @@ func InitAuthControllerHandler() (*controller.AuthController, error) {
 		repository.NewAuthRepository,
 		repository.NewUserRepository,
 		service.NewAuthService,
+		service.NewJWTService,
 		controller.NewAuthController,
 	)
 	return &controller.AuthController{}, nil

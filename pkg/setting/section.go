@@ -6,6 +6,7 @@ type Config struct {
 	Redis  RedisSetting  `mapstructure:"redis"`
 	Server ServerSetting `mapstructure:"server"`
 	Mail   MailSetting   `mapstructure:"mail"`
+	JWT    JWTSetting    `mapstructure:"jwt"`
 }
 
 type ServerSetting struct {
@@ -46,4 +47,10 @@ type MailSetting struct {
 	Port     string `mapstructure:"port"`
 	Password string `mapstructure:"password"`
 	Username string `mapstructure:"username"`
+}
+
+type JWTSetting struct {
+	API_SECRET_KEY           string `mapstructure:"api-key"`
+	JWTExpirationTime        string `mapstructure:"jwt-expiration-time"`
+	JWTRefreshExpirationTime string `mapstructure:"jwt-refresh-expiration-time"`
 }
