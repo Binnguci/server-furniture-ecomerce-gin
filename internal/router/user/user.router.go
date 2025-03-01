@@ -25,6 +25,8 @@ func (ur *UserRouter) InitUserRouter(Router *gin.RouterGroup) {
 	userRouterPrivate := Router.Group("/auth")
 	userRouterPrivate.Use(middleware.AuthenticationMiddleware())
 	userRouterPrivate.Use(middleware.PermissionMiddleware())
+	userRouterPrivate.Use(middleware.JWTAuthMiddleware())
 	{
+
 	}
 }

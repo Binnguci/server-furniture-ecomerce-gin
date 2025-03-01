@@ -15,7 +15,7 @@ const TableNameUserLog = "user_logs"
 // UserLog mapped from table <user_logs>
 type UserLog struct {
 	ID        int32          `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
-	UserID    int64          `gorm:"column:user_id" json:"user_id"`
+	UserID    []byte         `gorm:"column:user_id" json:"user_id"`
 	Action    string         `gorm:"column:action" json:"action"`
 	Message   string         `gorm:"column:message" json:"message"`
 	LogLevel  string         `gorm:"column:log_level" json:"log_level"`

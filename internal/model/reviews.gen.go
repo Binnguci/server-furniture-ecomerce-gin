@@ -16,7 +16,7 @@ const TableNameReview = "reviews"
 type Review struct {
 	ID              int32          `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
 	ProductID       int32          `gorm:"column:product_id;not null" json:"product_id"`
-	UserID          int64          `gorm:"column:user_id;not null" json:"user_id"`
+	UserID          []byte         `gorm:"column:user_id;not null" json:"user_id"`
 	Rating          int32          `gorm:"column:rating;not null" json:"rating"`
 	Like            int32          `gorm:"column:like;not null" json:"like"`
 	Comment         string         `gorm:"column:comment" json:"comment"`

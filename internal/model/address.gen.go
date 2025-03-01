@@ -21,7 +21,7 @@ type Address struct {
 	Province    string         `gorm:"column:province" json:"province"`
 	Country     string         `gorm:"column:country" json:"country"`
 	IsDefault   bool           `gorm:"column:is_default" json:"is_default"`
-	UserID      int64          `gorm:"column:user_id;not null" json:"user_id"`
+	UserID      []byte         `gorm:"column:user_id;not null" json:"user_id"`
 	CreatedAt   time.Time      `gorm:"column:created_at;default:CURRENT_TIMESTAMP" json:"created_at"`
 	UpdatedAt   time.Time      `gorm:"column:updated_at;default:CURRENT_TIMESTAMP" json:"updated_at"`
 	DeletedAt   gorm.DeletedAt `gorm:"column:deleted_at" json:"deleted_at"`

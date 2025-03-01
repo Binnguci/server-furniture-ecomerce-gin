@@ -16,7 +16,7 @@ const TableNameCartItem = "cart_items"
 type CartItem struct {
 	ID        string         `gorm:"column:id;primaryKey" json:"id"`
 	ProductID int32          `gorm:"column:product_id;not null" json:"product_id"`
-	CartID    string         `gorm:"column:cart_id;not null" json:"cart_id"`
+	CartID    []byte         `gorm:"column:cart_id;not null" json:"cart_id"`
 	Quantity  int32          `gorm:"column:quantity;default:1" json:"quantity"`
 	CreatedAt time.Time      `gorm:"column:created_at;default:CURRENT_TIMESTAMP" json:"created_at"`
 	UpdatedAt time.Time      `gorm:"column:updated_at;default:CURRENT_TIMESTAMP" json:"updated_at"`
