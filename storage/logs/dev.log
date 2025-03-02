@@ -98,3 +98,5 @@
 {"level":"INFO","timestamp":"2025-02-25T13:00:36.065+0700","caller":"initialize/mysql.go:27","msg":"MySQL connect success"}
 {"level":"INFO","timestamp":"2025-02-25T13:15:12.875+0700","caller":"initialize/mysql.go:27","msg":"MySQL connect success"}
 {"level":"WARN","timestamp":"2025-02-25T13:16:25.151+0700","caller":"repository/auth.repository.go:50","msg":"Invalid password attempt","username":"binnguci"}
+{"level":"INFO","timestamp":"2025-02-28T20:52:51.270+0700","caller":"initialize/mysql.go:27","msg":"MySQL connect success"}
+{"level":"INFO","timestamp":"2025-03-01T20:35:08.748+0700","caller":"initialize/mysql.go:27","msg":"MySQL connect success"}

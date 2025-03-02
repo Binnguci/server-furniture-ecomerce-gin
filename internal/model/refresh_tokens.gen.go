@@ -14,7 +14,7 @@ const TableNameRefreshToken = "refresh_tokens"
 type RefreshToken struct {
 	TokenID string    `gorm:"column:token_id;primaryKey" json:"token_id"`
 	Expired time.Time `gorm:"column:expired" json:"expired"`
-	UserID  int64     `gorm:"column:user_id;not null" json:"user_id"`
+	UserID  []byte    `gorm:"column:user_id;not null" json:"user_id"`
 }
 
 // TableName RefreshToken's table name

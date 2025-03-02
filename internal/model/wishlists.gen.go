@@ -15,7 +15,7 @@ const TableNameWishlist = "wishlists"
 // Wishlist mapped from table <wishlists>
 type Wishlist struct {
 	ID        int32          `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
-	UserID    int64          `gorm:"column:user_id;not null" json:"user_id"`
+	UserID    []byte         `gorm:"column:user_id;not null" json:"user_id"`
 	ProductID int32          `gorm:"column:product_id;not null" json:"product_id"`
 	CreatedAt time.Time      `gorm:"column:created_at;default:CURRENT_TIMESTAMP" json:"created_at"`
 	UpdatedAt time.Time      `gorm:"column:updated_at;default:CURRENT_TIMESTAMP" json:"updated_at"`

@@ -15,7 +15,7 @@ const TableNameOrder = "orders"
 // Order mapped from table <orders>
 type Order struct {
 	ID          int64          `gorm:"column:id;primaryKey;autoIncrement:true" json:"id"`
-	UserID      int64          `gorm:"column:user_id;not null" json:"user_id"`
+	UserID      []byte         `gorm:"column:user_id;not null" json:"user_id"`
 	TotalAmount float64        `gorm:"column:total_amount;not null" json:"total_amount"`
 	Status      string         `gorm:"column:status;not null;default:Chờ xác nhận" json:"status"`
 	Payment     string         `gorm:"column:payment;not null" json:"payment"`
