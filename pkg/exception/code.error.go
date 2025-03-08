@@ -20,11 +20,12 @@ const (
 	GatewayTimeoutCode      = 504
 
 	// Custom application errors
-	UserExistsCode   = 1001
-	ErrorInvalidOTP  = 1002
-	ErrorSendEmail   = 1003
-	CreateFailedCode = 1004
-	ErrorUpdateCode  = 3001
+	UserExistsCode    = 1001
+	ErrorInvalidOTP   = 1002
+	ErrorSendEmail    = 1003
+	CreateFailedCode  = 1004
+	ErrorUpdateCode   = 3001
+	CannotCreateToken = 3002
 )
 
 var message = map[int]string{
@@ -47,11 +48,12 @@ var message = map[int]string{
 	GatewayTimeoutCode:      "Gateway timeout: Request timed out",
 
 	// Custom error messages
-	UserExistsCode:   "User already exists",
-	ErrorInvalidOTP:  "Invalid OTP",
-	ErrorSendEmail:   "Error when sending email",
-	CreateFailedCode: "Error when creating resource",
-	ErrorUpdateCode:  "Error when updating database",
+	UserExistsCode:    "User already exists",
+	ErrorInvalidOTP:   "Invalid OTP",
+	ErrorSendEmail:    "Error when sending email",
+	CreateFailedCode:  "Error when creating resource",
+	ErrorUpdateCode:   "Error when updating database",
+	CannotCreateToken: "Can't create token when login",
 }
 
 func GetMessage(code int) string {

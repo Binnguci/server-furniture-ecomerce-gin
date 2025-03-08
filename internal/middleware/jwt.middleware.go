@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"server-furniture-ecommerce-gin/global"
 	"server-furniture-ecommerce-gin/pkg/utils/auth"
+	"strings"
 )
 
 func JWTAuthMiddleware() gin.HandlerFunc {
@@ -16,6 +17,8 @@ func JWTAuthMiddleware() gin.HandlerFunc {
 			c.Abort()
 			return
 		}
+		tokenString = strings.TrimPrefix(tokenString, "Bearer ")
+
 		token, err := jwt.ParseWithClaims(tokenString, &auth.PayloadClaims{}, func(token *jwt.Token) (interface{}, error) {
 			return []byte(global.Config.JWT.API_SECRET_KEY), nil
 		})
@@ -26,7 +29,14 @@ func JWTAuthMiddleware() gin.HandlerFunc {
 			return
 		}
 
-		c.Set("user", token.Claims.(*auth.PayloadClaims).Username)
+		claims, ok := token.Claims.(*auth.PayloadClaims)
+		if !ok {
+			c.JSON(http.StatusUnauthorized, gin.H{"error": "Không thể lấy thông tin từ token"})
+			c.Abort()
+			return
+		}
+		c.Set("user", claims.Username)
+
 		c.Next()
 	}
 }

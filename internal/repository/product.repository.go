@@ -1,8 +1,6 @@
 package repository
 
 import (
-	"math"
-	"server-furniture-ecommerce-gin/global"
 	"server-furniture-ecommerce-gin/internal/model"
 )
 

@@ -3,7 +3,6 @@ package impl
 import (
 	"errors"
 	"fmt"
-	"go.uber.org/zap"
 	"server-furniture-ecommerce-gin/global"
 	"server-furniture-ecommerce-gin/internal/model"
 	"server-furniture-ecommerce-gin/internal/repository"
@@ -36,15 +35,19 @@ func (ari *AuthRepositoryImpl) GetUserByUsernameAndPassword(username string, pas
 	var user model.User
 	err := global.Mdb.Table(model.TableNameUser).Where("username = ?", username).First(&user).Error
 	if err != nil {
-		global.Logger.Warn("User not found", zap.String("username", username))
-		return false, errors.New("Username is wrong")
+		return false, err
 	}
-
 	hashedInputPassword := crypto.GetHash(password)
 	if user.Password != hashedInputPassword {
-		global.Logger.Warn("Invalid password attempt", zap.String("username", username))
 		return false, errors.New("Password is wrong")
 	}
+	return true, nil
+}
 
+func (ari *AuthRepositoryImpl) SaveTokenInvalid(tokenInvalid *string) (bool, error) {
+	err := global.Mdb.Table(model.TableNameInvalidatedToken).Create(&tokenInvalid)
+	if err != nil {
+		return false, err.Error
+	}
 	return true, nil
 }

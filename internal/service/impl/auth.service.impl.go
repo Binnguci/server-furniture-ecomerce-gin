@@ -1,12 +1,14 @@
 package impl
 
 import (
+	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"server-furniture-ecommerce-gin/global"
 	"server-furniture-ecommerce-gin/internal/domain/request"
 	"server-furniture-ecommerce-gin/internal/repository"
 	"server-furniture-ecommerce-gin/internal/service"
 	"server-furniture-ecommerce-gin/pkg/exception"
+	"server-furniture-ecommerce-gin/pkg/helper"
 )
 
 type AuthServiceImpl struct {
@@ -36,10 +38,16 @@ func (asi *AuthServiceImpl) VerifyAccount(otp string) int {
 	return exception.SuccessCode
 }
 
-func (asi *AuthServiceImpl) Login(loginData *request.LoginInput) (bool, error) {
+func (asi *AuthServiceImpl) Login(loginData *request.LoginInput) int {
 	_, err := asi.authRepository.GetUserByUsernameAndPassword(loginData.Username, loginData.Password)
 	if err != nil {
-		return false, err
+		return exception.BadRequestCode
 	}
-	return true, nil
+	return exception.SuccessCode
+}
+
+func (asi *AuthServiceImpl) Logout(logoutData *request.LogoutData, ctx *gin.Context) int {
+	helper.GetUserFromContext(ctx)
+
+	panic("implement me")
 }

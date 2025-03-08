@@ -29,3 +29,10 @@ func (uri *UserRepositoryImpl) Update(user *model.User) bool {
 		Updates(user).RowsAffected
 	return result != 0
 }
+
+func (uri *UserRepositoryImpl) ChangePassword(username string, password string) bool {
+	result := global.Mdb.Table(model.TableNameUser).
+		Where("username = ?", username).
+		Update("password", password).RowsAffected
+	return result != 0
+}
